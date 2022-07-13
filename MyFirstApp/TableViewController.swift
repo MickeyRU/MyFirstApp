@@ -29,14 +29,17 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        var content = cell.defaultContentConfiguration()
-        content.text = restaurantNames[indexPath.row]
-        content.image = UIImage(named: restaurantNames[indexPath.row])
-        content.imageProperties.reservedLayoutSize = CGSize(width: 30, height: 30)
-        content.imageProperties.cornerRadius = cell.frame.size.height / 2
-
-        cell.contentConfiguration = content
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        cell.nameLabel.text = restaurantNames[indexPath.row]
+        cell.placeImageView.image = UIImage(named: restaurantNames[indexPath.row])
+        cell.placeImageView.layer.cornerRadius =  cell.placeImageView.frame.size.height / 2
+        cell.placeImageView.clipsToBounds = true
         return cell
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        85
     }
 }
