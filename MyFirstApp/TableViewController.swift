@@ -34,6 +34,8 @@ class TableViewController: UITableViewController {
         content.text = restaurantNames[indexPath.row]
         content.image = UIImage(named: restaurantNames[indexPath.row])
         content.imageProperties.reservedLayoutSize = CGSize(width: 30, height: 30)
+        content.imageProperties.cornerRadius = cell.frame.size.height / 2
+
         cell.contentConfiguration = content
         return cell
     }
