@@ -32,4 +32,8 @@ class TableViewController: UITableViewController {
         cell.placeImageView.clipsToBounds = true
         return cell
     }
+    
+    @IBAction func cancelAction(segue: UIStoryboardSegue) {
+        
+    }
 }
