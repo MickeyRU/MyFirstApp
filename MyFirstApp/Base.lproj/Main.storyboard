@@ -16,57 +16,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="65" id="NuP-GN-ldj" customClass="CustomTableViewCell" customModule="MyFirstApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="65"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="85" id="NuP-GN-ldj" customClass="CustomTableViewCell" customModule="MyFirstApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NuP-GN-ldj" id="sD7-pD-PAd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k4i-mA-yIQ" userLabel="placeImageView">
-                                            <rect key="frame" x="15" y="0.0" width="65" height="65"/>
+                                            <rect key="frame" x="15" y="10" width="66" height="65"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="65" id="jjH-Te-Mbh"/>
+                                                <constraint firstAttribute="height" constant="65" id="7je-la-mJP"/>
+                                                <constraint firstAttribute="width" constant="66" id="LC9-li-Njv"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNC-n5-huU" userLabel="nameLabel">
-                                            <rect key="frame" x="96" y="6" width="308" height="22"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="locationLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPx-9C-WU7" userLabel="locationLabel">
+                                            <rect key="frame" x="96" y="35" width="307" height="15"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPx-9C-WU7" userLabel="locationLabel">
-                                            <rect key="frame" x="96" y="28" width="308" height="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="typeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3X-PK-3Mg" userLabel="typeLabel">
+                                            <rect key="frame" x="96" y="54" width="307" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="Wpu-r3-kT2"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3X-PK-3Mg" userLabel="typeLabel">
-                                            <rect key="frame" x="96" y="45" width="308" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNC-n5-huU" userLabel="nameLabel">
+                                            <rect key="frame" x="95" y="9" width="299" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="a6v-vo-HDW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bxw-z1-cBJ">
-                                            <rect key="frame" x="15" y="-2" width="65" height="65"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="65" id="yQT-U0-OTz"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="WNC-n5-huU" firstAttribute="top" secondItem="sD7-pD-PAd" secondAttribute="top" constant="6" id="0N3-up-guG"/>
-                                        <constraint firstItem="K3X-PK-3Mg" firstAttribute="leading" secondItem="k4i-mA-yIQ" secondAttribute="trailing" constant="16" id="8vp-wj-QAd"/>
-                                        <constraint firstAttribute="trailing" secondItem="WNC-n5-huU" secondAttribute="trailing" constant="10" id="Mns-bI-kOq"/>
-                                        <constraint firstItem="aPx-9C-WU7" firstAttribute="trailing" secondItem="sD7-pD-PAd" secondAttribute="trailingMargin" constant="10" id="O39-uT-A7u"/>
-                                        <constraint firstItem="k4i-mA-yIQ" firstAttribute="top" secondItem="sD7-pD-PAd" secondAttribute="top" id="P7T-B8-aoN"/>
-                                        <constraint firstAttribute="bottom" secondItem="k4i-mA-yIQ" secondAttribute="bottom" id="RuW-fX-a7e"/>
-                                        <constraint firstItem="aPx-9C-WU7" firstAttribute="top" secondItem="WNC-n5-huU" secondAttribute="bottom" id="gzA-7n-8p4"/>
-                                        <constraint firstItem="WNC-n5-huU" firstAttribute="leading" secondItem="k4i-mA-yIQ" secondAttribute="trailing" constant="16" id="h4Y-yN-Lqb"/>
-                                        <constraint firstItem="k4i-mA-yIQ" firstAttribute="leading" secondItem="sD7-pD-PAd" secondAttribute="leading" constant="15" id="jIQ-2E-VeI"/>
-                                        <constraint firstItem="aPx-9C-WU7" firstAttribute="leading" secondItem="k4i-mA-yIQ" secondAttribute="trailing" constant="16" id="jx4-2N-gEL"/>
-                                        <constraint firstAttribute="trailing" secondItem="K3X-PK-3Mg" secondAttribute="trailing" constant="10" id="lwE-W9-Y9h"/>
-                                        <constraint firstItem="K3X-PK-3Mg" firstAttribute="top" secondItem="WNC-n5-huU" secondAttribute="bottom" constant="17" id="oAS-dN-gTO"/>
+                                        <constraint firstItem="aPx-9C-WU7" firstAttribute="top" secondItem="WNC-n5-huU" secondAttribute="bottom" constant="5" id="60v-y1-JaX"/>
+                                        <constraint firstItem="k4i-mA-yIQ" firstAttribute="leading" secondItem="sD7-pD-PAd" secondAttribute="leading" constant="15" id="87i-KN-H4O"/>
+                                        <constraint firstAttribute="trailing" secondItem="K3X-PK-3Mg" secondAttribute="trailing" constant="11" id="8k3-YF-6zA"/>
+                                        <constraint firstAttribute="trailing" secondItem="WNC-n5-huU" secondAttribute="trailing" constant="20" symbolic="YES" id="OgC-DN-djV"/>
+                                        <constraint firstAttribute="bottom" secondItem="aPx-9C-WU7" secondAttribute="bottom" constant="35" id="PbZ-nM-ZUy"/>
+                                        <constraint firstItem="K3X-PK-3Mg" firstAttribute="leading" secondItem="k4i-mA-yIQ" secondAttribute="trailing" constant="15" id="RWw-UK-ndf"/>
+                                        <constraint firstItem="WNC-n5-huU" firstAttribute="top" secondItem="sD7-pD-PAd" secondAttribute="top" constant="9" id="SvN-Ff-zpu"/>
+                                        <constraint firstAttribute="bottom" secondItem="K3X-PK-3Mg" secondAttribute="bottom" constant="13" id="mHK-5f-iNv"/>
+                                        <constraint firstAttribute="trailing" secondItem="aPx-9C-WU7" secondAttribute="trailing" constant="11" id="upi-Zt-mKq"/>
+                                        <constraint firstItem="aPx-9C-WU7" firstAttribute="leading" secondItem="k4i-mA-yIQ" secondAttribute="trailing" constant="15" id="uqb-mD-cB8"/>
+                                        <constraint firstItem="k4i-mA-yIQ" firstAttribute="centerY" secondItem="sD7-pD-PAd" secondAttribute="centerY" id="vHA-u0-Ysc"/>
+                                        <constraint firstItem="WNC-n5-huU" firstAttribute="leading" secondItem="k4i-mA-yIQ" secondAttribute="trailing" constant="14" id="wJT-H6-7nO"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

@@ -9,12 +9,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let restaurantNames = [
-        "Burger Heroes", "Kitchen", "Bonsai", "Дастархан",
-        "Индокитай", "X.O", "Балкан Гриль", "Sherlock Holmes",
-        "Speak Easy", "Morris Pub", "Вкусные истории",
-        "Классик", "Love&Life", "Шок", "Бочка"
-    ]
+    var myPlaces = Places.makePlaces()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,24 +17,19 @@ class TableViewController: UITableViewController {
 
     // MARK: - UITableViewDataSource
 
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurantNames.count
+        return myPlaces.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-        cell.nameLabel.text = restaurantNames[indexPath.row]
-        cell.placeImageView.image = UIImage(named: restaurantNames[indexPath.row])
+        cell.nameLabel.text = myPlaces[indexPath.row].name
+        cell.placeImageView.image = UIImage(named: myPlaces[indexPath.row].image)
+        cell.typeLabel.text = myPlaces[indexPath.row].type
+        cell.locationLabel.text = myPlaces[indexPath.row].location
         cell.placeImageView.layer.cornerRadius =  cell.placeImageView.frame.size.height / 2
         cell.placeImageView.clipsToBounds = true
         return cell
-    }
-    
-    // MARK: - UITableViewDelegate
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        85
     }
 }
