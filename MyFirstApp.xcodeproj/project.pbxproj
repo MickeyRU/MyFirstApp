@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BECE43AC287FECFD00BAE4FA /* PlacesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE43AB287FECFD00BAE4FA /* PlacesModel.swift */; };
+		BECE43AE2881298300BAE4FA /* PlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE43AD2881298300BAE4FA /* PlacesTableViewController.swift */; };
 		BEFD954C287E166000BFE17A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD954B287E166000BFE17A /* AppDelegate.swift */; };
 		BEFD954E287E166000BFE17A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD954D287E166000BFE17A /* SceneDelegate.swift */; };
 		BEFD9553287E166000BFE17A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFD9551287E166000BFE17A /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		BECE43AB287FECFD00BAE4FA /* PlacesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesModel.swift; sourceTree = "<group>"; };
+		BECE43AD2881298300BAE4FA /* PlacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewController.swift; sourceTree = "<group>"; };
 		BEFD9548287E166000BFE17A /* MyFirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFD954B287E166000BFE17A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEFD954D287E166000BFE17A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				BEFD954B287E166000BFE17A /* AppDelegate.swift */,
 				BEFD954D287E166000BFE17A /* SceneDelegate.swift */,
 				BEFD9561287E175E00BFE17A /* TableViewController.swift */,
+				BECE43AD2881298300BAE4FA /* PlacesTableViewController.swift */,
 				BEFD9563287EF50300BFE17A /* CustomTableViewCell.swift */,
 				BECE43AB287FECFD00BAE4FA /* PlacesModel.swift */,
 				BEFD9551287E166000BFE17A /* Main.storyboard */,
@@ -149,6 +152,7 @@
 				BEFD9564287EF50300BFE17A /* CustomTableViewCell.swift in Sources */,
 				BEFD9562287E175E00BFE17A /* TableViewController.swift in Sources */,
 				BECE43AC287FECFD00BAE4FA /* PlacesModel.swift in Sources */,
+				BECE43AE2881298300BAE4FA /* PlacesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
