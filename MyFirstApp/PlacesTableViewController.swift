@@ -17,20 +17,33 @@ class PlacesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cameraImage = UIImage(named: "camera")
+        let albumImage = UIImage(named: "photo")
+
         if indexPath.row == 0 {
             let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             
             let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
-                self.imagePicker(source: .camera)            }
+                self.imagePicker(source: .camera)
+            }
             
-            let albomAction = UIAlertAction(title: "Photo Library", style: .default) { _ in
+            cameraAction.setValue(cameraImage, forKey: "image")
+            cameraAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+
+            
+            let albumAction = UIAlertAction(title: "Photo Library", style: .default) { _ in
                 self.imagePicker(source: .photoLibrary)
             }
+            
+            albumAction.setValue(albumImage, forKey: "image")
+            albumAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
             
             alertController.addAction(cameraAction)
-            alertController.addAction(albomAction)
+            alertController.addAction(albumAction)
             alertController.addAction(cancelAction)
             
             present(alertController, animated: true)
