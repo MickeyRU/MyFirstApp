@@ -21,7 +21,6 @@ class TableViewController: UITableViewController {
         return myPlaces.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         cell.nameLabel.text = myPlaces[indexPath.row].name
