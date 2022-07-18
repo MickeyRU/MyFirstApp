@@ -8,10 +8,12 @@
 import UIKit
 
 struct Places {
+    
     var name: String
-    var image: String
-    var location: String
-    var type: String
+    var restaurantImage: String?
+    var location: String?
+    var type: String?
+    var image: UIImage?
     
    static let restaurantNames = [
         "Burger Heroes", "Kitchen", "Bonsai", "Дастархан",
@@ -24,7 +26,7 @@ struct Places {
         var places = [Places]()
         
         for place in restaurantNames {
-            places.append(Places(name: place, image: place, location: "Moscow", type: "Restaraunt"))
+            places.append(Places(name: place, restaurantImage: place, location: "Moscow", type: "Restaraunt", image: nil))
         }
         
         return places

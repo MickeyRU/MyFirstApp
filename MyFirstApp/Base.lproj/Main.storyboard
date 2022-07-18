@@ -11,7 +11,7 @@
         <scene sceneID="nL2-pa-J6c">
             <objects>
                 <tableViewController id="xXi-y7-q2o" customClass="TableViewController" customModule="MyFirstApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Cha-Ey-bfH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="Cha-Ey-bfH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -238,15 +238,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Place" id="vnP-dR-l92">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="8sK-cH-8AN">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="8sK-cH-8AN"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="4Mk-Is-GMk">
                             <connections>
-                                <segue destination="4Gx-m3-4uM" kind="unwind" unwindAction="cancelActionWithSegue:" id="bOY-kR-HfK"/>
+                                <segue destination="4Gx-m3-4uM" kind="unwind" unwindAction="unwindSigueWithSegue:" id="FCR-xf-Rsp"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="4Mk-Is-GMk"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="LocationName" destination="zro-D0-0tI" id="8s0-pl-wzI"/>
                         <outlet property="placeImage" destination="cHF-AN-A45" id="7Qr-5y-63V"/>
+                        <outlet property="placeName" destination="Npq-Ya-I72" id="0fr-Eq-yl4"/>
+                        <outlet property="saveButton" destination="4Mk-Is-GMk" id="Kcy-4v-jTs"/>
+                        <outlet property="typeName" destination="cc8-xF-T2h" id="twv-ZX-6on"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRe-II-i7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

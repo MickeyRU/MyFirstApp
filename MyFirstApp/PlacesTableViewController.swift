@@ -9,11 +9,21 @@ import UIKit
 
 class PlacesTableViewController: UITableViewController {
     
+    var newPlace: Places?
+    var imageIsChanged = false
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var placeImage: UIImageView!
+    @IBOutlet weak var placeName: UITextField!
+    @IBOutlet weak var locationName: UITextField!
+    @IBOutlet weak var typeName: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        saveButton.isEnabled = false
+        
+        placeName.addTarget(self, action: #selector (textFiledChanged), for: .editingChanged)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -52,6 +62,19 @@ class PlacesTableViewController: UITableViewController {
             view.endEditing(true)
         }
     }
+    
+    func saveNewPlace() {
+        
+        var image: UIImage?
+        
+        if imageIsChanged {
+            image = placeImage.image
+        } else {
+            image = UIImage(named: "imagePlaceholder")
+        }
+        
+        newPlace = Places(name: placeName.text!, restaurantImage: nil, location: locationName.text, type: typeName.text, image: image)
+    }
 }
 
 // MARK: - Text Field Delegate
@@ -62,6 +85,14 @@ extension PlacesTableViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    @objc private func textFiledChanged() {
+        if placeName.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
     }
 }
 
@@ -85,6 +116,8 @@ extension PlacesTableViewController: UIImagePickerControllerDelegate, UINavigati
         placeImage.image = info[.editedImage] as? UIImage
         placeImage.contentMode = .scaleAspectFill
         placeImage.clipsToBounds = true
+        
+        imageIsChanged = true
         dismiss(animated: true)
     }
 }

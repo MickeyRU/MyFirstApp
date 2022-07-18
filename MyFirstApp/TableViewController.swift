@@ -23,16 +23,33 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-        cell.nameLabel.text = myPlaces[indexPath.row].name
-        cell.placeImageView.image = UIImage(named: myPlaces[indexPath.row].image)
-        cell.typeLabel.text = myPlaces[indexPath.row].type
-        cell.locationLabel.text = myPlaces[indexPath.row].location
+
+        let place = myPlaces[indexPath.row]
+        
+        cell.nameLabel.text = place.name
+        cell.typeLabel.text = place.type
+        cell.locationLabel.text = place.location
+        
+        if place.image == nil {
+            cell.placeImageView.image = UIImage(named: place.restaurantImage!)
+        } else {
+            cell.placeImageView.image = place.image
+        }
+        
+        
         cell.placeImageView.layer.cornerRadius =  cell.placeImageView.frame.size.height / 2
         cell.placeImageView.clipsToBounds = true
         return cell
     }
     
-    @IBAction func cancelAction(segue: UIStoryboardSegue) {
-        
+    @IBAction func unwindSigue(segue: UIStoryboardSegue) {
+        guard let newPlaceVC = segue.source as? PlacesTableViewController else { return }
+        newPlaceVC.saveNewPlace()
+        myPlaces.append(newPlaceVC.newPlace!)
+        tableView.reloadData()
+    }
+    
+    @IBAction func cancelButtonTapped(segue: UIStoryboardSegue) {
+        dismiss(animated: true)
     }
 }
