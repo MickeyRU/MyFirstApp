@@ -78,7 +78,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Places" id="twd-PD-e8D">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="6ZM-A3-l7g">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6ZM-A3-l7g">
                             <connections>
                                 <segue destination="tWf-UA-SF6" kind="presentation" modalTransitionStyle="crossDissolve" id="rTh-B5-AOP"/>
                             </connections>
@@ -238,8 +238,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Place" id="vnP-dR-l92">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="8sK-cH-8AN"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="4Mk-Is-GMk">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8sK-cH-8AN"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="4Mk-Is-GMk">
                             <connections>
                                 <segue destination="4Gx-m3-4uM" kind="unwind" unwindAction="unwindSigueWithSegue:" id="FCR-xf-Rsp"/>
                             </connections>

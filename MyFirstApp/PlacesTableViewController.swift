@@ -9,10 +9,11 @@ import UIKit
 
 class PlacesTableViewController: UITableViewController {
     
-    var newPlace: Places?
+    var newPlace = Place()
     var imageIsChanged = false
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var placeName: UITextField!
     @IBOutlet weak var locationName: UITextField!
@@ -20,6 +21,12 @@ class PlacesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DispatchQueue.main.async {
+            self.newPlace.savePlaces()
+        }
+        
+        
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
         
@@ -73,7 +80,7 @@ class PlacesTableViewController: UITableViewController {
             image = UIImage(named: "imagePlaceholder")
         }
         
-        newPlace = Places(name: placeName.text!, restaurantImage: nil, location: locationName.text, type: typeName.text, image: image)
+//        newPlace = Places(name: placeName.text!, restaurantImage: nil, location: locationName.text, type: typeName.text, image: image)
     }
 }
 
