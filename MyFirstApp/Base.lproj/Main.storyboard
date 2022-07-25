@@ -69,6 +69,7 @@
                                     <outlet property="nameLabel" destination="WNC-n5-huU" id="rue-nT-Pb7"/>
                                     <outlet property="placeImageView" destination="k4i-mA-yIQ" id="Eyv-I5-RZF"/>
                                     <outlet property="typeLabel" destination="K3X-PK-3Mg" id="1nt-3C-GBE"/>
+                                    <segue destination="xYZ-2h-h0z" kind="show" identifier="editPlace" id="P3D-Cg-hwQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -80,7 +81,7 @@
                     <navigationItem key="navigationItem" title="My Places" id="twd-PD-e8D">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6ZM-A3-l7g">
                             <connections>
-                                <segue destination="tWf-UA-SF6" kind="presentation" modalTransitionStyle="crossDissolve" id="rTh-B5-AOP"/>
+                                <segue destination="xYZ-2h-h0z" kind="show" id="8ak-hA-QNT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -94,7 +95,7 @@
             <objects>
                 <tableViewController id="xYZ-2h-h0z" customClass="PlacesTableViewController" customModule="MyFirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="oVa-s5-JaB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -108,15 +109,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="cHF-AN-A45">
-                                                    <rect key="frame" x="20" y="11" width="374" height="228"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                             <constraints>
-                                                <constraint firstItem="cHF-AN-A45" firstAttribute="leading" secondItem="fHx-Ec-FBc" secondAttribute="leadingMargin" id="m67-hZ-PpC"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="cHF-AN-A45" secondAttribute="trailing" id="mmS-YF-GXn"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="cHF-AN-A45" secondAttribute="bottom" id="wRZ-hE-nuA"/>
-                                                <constraint firstItem="cHF-AN-A45" firstAttribute="top" secondItem="fHx-Ec-FBc" secondAttribute="topMargin" id="zZF-q4-9yZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="cHF-AN-A45" secondAttribute="bottom" id="6XE-PX-N5g"/>
+                                                <constraint firstItem="cHF-AN-A45" firstAttribute="leading" secondItem="fHx-Ec-FBc" secondAttribute="leading" id="EvT-f9-kLM"/>
+                                                <constraint firstAttribute="trailing" secondItem="cHF-AN-A45" secondAttribute="trailing" id="Hsz-cQ-gfi"/>
+                                                <constraint firstItem="cHF-AN-A45" firstAttribute="top" secondItem="fHx-Ec-FBc" secondAttribute="top" id="yB8-DD-YgO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
@@ -238,7 +239,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Place" id="vnP-dR-l92">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8sK-cH-8AN"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8sK-cH-8AN">
+                            <connections>
+                                <segue destination="4Gx-m3-4uM" kind="unwind" unwindAction="cancelButtonTappedWithSegue:" id="DTu-TQ-Sdi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="4Mk-Is-GMk">
                             <connections>
                                 <segue destination="4Gx-m3-4uM" kind="unwind" unwindAction="unwindSigueWithSegue:" id="FCR-xf-Rsp"/>
@@ -275,7 +280,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8L-wm-62n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-606" y="-430"/>
+            <point key="canvasLocation" x="-886" y="-431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kLf-fF-Hj6">
@@ -283,22 +288,22 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tWf-UA-SF6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GrP-0G-K3r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="xYZ-2h-h0z" kind="relationship" relationship="rootViewController" id="S1C-zz-zO9"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKl-fy-vnK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="818.84057971014499" y="-431.25"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="P3D-Cg-hwQ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Photo" width="195" height="196"/>
         <systemColor name="opaqueSeparatorColor">

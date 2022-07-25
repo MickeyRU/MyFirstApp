@@ -39,18 +39,9 @@ class TableViewController: UITableViewController {
         cell.placeImageView.clipsToBounds = true
         return cell
     }
-
-    @IBAction func unwindSigue(segue: UIStoryboardSegue) {
-        guard let newPlaceVC = segue.source as? PlacesTableViewController else { return }
-        newPlaceVC.saveNewPlace()
-        tableView.reloadData()
-    }
     
-    @IBAction func cancelButtonTapped(segue: UIStoryboardSegue) {
-        dismiss(animated: true)
-    }
     
-    // MARK: Table View Delegate
+    //  MARK: Table View Delegate
     
     // Удаление строки по свайпу с анимацией
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -60,5 +51,26 @@ class TableViewController: UITableViewController {
             StorageManager.deleteObject(place)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+    }
+    
+    //  MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editPlace" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let place = places[indexPath.row]
+            let newPlaceVC = segue.destination as! PlacesTableViewController
+            newPlaceVC.currentPlace = place
+        }
+    }
+    
+    @IBAction func unwindSigue(segue: UIStoryboardSegue) {
+        guard let newPlaceVC = segue.source as? PlacesTableViewController else { return }
+        newPlaceVC.saveNewPlace()
+        tableView.reloadData()
+    }
+    
+    @IBAction func cancelButtonTapped(segue: UIStoryboardSegue) {
+        dismiss(animated: true)
     }
 }
