@@ -9,7 +9,6 @@ import UIKit
 
 class PlacesTableViewController: UITableViewController {
     
-    var newPlace = Place()
     var imageIsChanged = false
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -21,24 +20,19 @@ class PlacesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        DispatchQueue.main.async {
-            self.newPlace.savePlaces()
-        }
-        
-        
+                
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
-        
         placeName.addTarget(self, action: #selector (textFiledChanged), for: .editingChanged)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cameraImage = UIImage(named: "camera")
-        let albumImage = UIImage(named: "photo")
-
         if indexPath.row == 0 {
+            
+            let cameraImage = UIImage(named: "camera")
+            let albumImage = UIImage(named: "photo")
+            
             let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             
             let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
@@ -80,13 +74,18 @@ class PlacesTableViewController: UITableViewController {
             image = UIImage(named: "imagePlaceholder")
         }
         
-//        newPlace = Places(name: placeName.text!, restaurantImage: nil, location: locationName.text, type: typeName.text, image: image)
+        let imageData = image?.pngData()
+        
+        let newPlace = Place(name: placeName.text!, location: locationName.text, type: typeName.text, imageData: imageData)
+        
+        StorageManager.saveObject(newPlace)
+
     }
 }
 
-// MARK: - Text Field Delegate
-// Закрываем клавиатуру по нажатию на Done
+//  MARK: - Text Field Delegate
 
+//  Закрываем клавиатуру по нажатию на Done
 extension PlacesTableViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -103,9 +102,9 @@ extension PlacesTableViewController: UITextFieldDelegate {
     }
 }
 
-// MARK: - Work with imagePicker
-// Выбор способа добавления фото к профилю заведения при добавлении
+//  MARK: - Work with imagePicker
 
+//  Выбор способа добавления фото к профилю заведения при добавлении
 extension PlacesTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePicker(source: UIImagePickerController.SourceType) {
