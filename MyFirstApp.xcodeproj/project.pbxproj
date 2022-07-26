@@ -15,7 +15,7 @@
 		BEFD9553287E166000BFE17A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFD9551287E166000BFE17A /* Main.storyboard */; };
 		BEFD9555287E166100BFE17A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEFD9554287E166100BFE17A /* Assets.xcassets */; };
 		BEFD9558287E166100BFE17A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFD9556287E166100BFE17A /* LaunchScreen.storyboard */; };
-		BEFD9562287E175E00BFE17A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD9561287E175E00BFE17A /* TableViewController.swift */; };
+		BEFD9562287E175E00BFE17A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD9561287E175E00BFE17A /* MainViewController.swift */; };
 		BEFD9564287EF50300BFE17A /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD9563287EF50300BFE17A /* CustomTableViewCell.swift */; };
 		EFD738305724F5A2F3B83F73 /* Pods_MyFirstApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2041569CC047250B45998BA5 /* Pods_MyFirstApp.framework */; };
 /* End PBXBuildFile section */
@@ -33,7 +33,7 @@
 		BEFD9554287E166100BFE17A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEFD9557287E166100BFE17A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEFD9559287E166100BFE17A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEFD9561287E175E00BFE17A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		BEFD9561287E175E00BFE17A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BEFD9563287EF50300BFE17A /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D54AEB1A29B1828FBDE195F2 /* Pods-MyFirstApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFirstApp.debug.xcconfig"; path = "Target Support Files/Pods-MyFirstApp/Pods-MyFirstApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +90,7 @@
 			children = (
 				BEFD954B287E166000BFE17A /* AppDelegate.swift */,
 				BEFD954D287E166000BFE17A /* SceneDelegate.swift */,
-				BEFD9561287E175E00BFE17A /* TableViewController.swift */,
+				BEFD9561287E175E00BFE17A /* MainViewController.swift */,
 				BECE43AD2881298300BAE4FA /* PlacesTableViewController.swift */,
 				BEFD9563287EF50300BFE17A /* CustomTableViewCell.swift */,
 				BECE43AB287FECFD00BAE4FA /* PlacesModel.swift */,
@@ -222,7 +222,7 @@
 				BEFD954E287E166000BFE17A /* SceneDelegate.swift in Sources */,
 				BEFD9564287EF50300BFE17A /* CustomTableViewCell.swift in Sources */,
 				BEC1212E28881B4800AC90EE /* StorageManager.swift in Sources */,
-				BEFD9562287E175E00BFE17A /* TableViewController.swift in Sources */,
+				BEFD9562287E175E00BFE17A /* MainViewController.swift in Sources */,
 				BECE43AC287FECFD00BAE4FA /* PlacesModel.swift in Sources */,
 				BECE43AE2881298300BAE4FA /* PlacesTableViewController.swift in Sources */,
 			);
