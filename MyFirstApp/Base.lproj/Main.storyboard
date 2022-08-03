@@ -13,7 +13,7 @@
             <objects>
                 <tableViewController id="xYZ-2h-h0z" customClass="PlacesTableViewController" customModule="MyFirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="oVa-s5-JaB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -189,9 +189,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="lbT-ki-ASt">
-                                <rect key="frame" x="0.0" y="127" width="414" height="769"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lbT-ki-ASt">
+                                <rect key="frame" x="0.0" y="119" width="414" height="743"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="85" id="ydA-tI-DVu" customClass="CustomTableViewCell" customModule="MyFirstApp" customModuleProvider="target">
@@ -257,24 +256,34 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TJS-8o-VhZ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="39"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Date"/>
+                                    <segment title="Name"/>
                                 </segments>
+                                <connections>
+                                    <action selector="sortType:" destination="Hqj-aA-AJi" eventType="valueChanged" id="EOL-CL-nyk"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="67a-W7-1Ll"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="67a-W7-1Ll" firstAttribute="trailing" secondItem="TJS-8o-VhZ" secondAttribute="trailing" id="1up-5E-slK"/>
-                            <constraint firstItem="lbT-ki-ASt" firstAttribute="top" secondItem="TJS-8o-VhZ" secondAttribute="bottom" constant="1" id="7QR-w9-mJv"/>
-                            <constraint firstItem="TJS-8o-VhZ" firstAttribute="top" secondItem="67a-W7-1Ll" secondAttribute="top" id="Lrk-U4-Gma"/>
-                            <constraint firstItem="TJS-8o-VhZ" firstAttribute="leading" secondItem="67a-W7-1Ll" secondAttribute="leading" id="qdW-2D-L32"/>
+                            <constraint firstItem="TJS-8o-VhZ" firstAttribute="trailing" secondItem="67a-W7-1Ll" secondAttribute="trailing" id="FLu-3H-ZS2"/>
+                            <constraint firstItem="lbT-ki-ASt" firstAttribute="trailing" secondItem="67a-W7-1Ll" secondAttribute="trailing" id="GQ2-wk-Hun"/>
+                            <constraint firstItem="TJS-8o-VhZ" firstAttribute="leading" secondItem="67a-W7-1Ll" secondAttribute="leading" id="McB-Kg-WMm"/>
+                            <constraint firstItem="TJS-8o-VhZ" firstAttribute="top" secondItem="67a-W7-1Ll" secondAttribute="top" id="NGc-A7-maP"/>
+                            <constraint firstItem="lbT-ki-ASt" firstAttribute="top" secondItem="TJS-8o-VhZ" secondAttribute="bottom" id="O30-gU-y00"/>
+                            <constraint firstItem="lbT-ki-ASt" firstAttribute="leading" secondItem="67a-W7-1Ll" secondAttribute="leading" id="OJw-Lv-JwH"/>
+                            <constraint firstItem="lbT-ki-ASt" firstAttribute="bottom" secondItem="67a-W7-1Ll" secondAttribute="bottom" id="jZM-Wi-h2r"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Places" id="oxZ-bH-Nd6">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" style="plain" id="b2L-sk-5Gr"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" style="plain" id="b2L-sk-5Gr">
+                            <connections>
+                                <action selector="reverceSorted:" destination="Hqj-aA-AJi" id="PhY-dB-CQz"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vbd-xN-i6h">
                             <connections>
                                 <segue destination="tWf-UA-SF6" kind="presentation" id="QPL-gT-m4k"/>
@@ -282,6 +291,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="reverceSortingButton" destination="b2L-sk-5Gr" id="ZJf-Ol-PL5"/>
+                        <outlet property="sortTypeSegmentedControl" destination="TJS-8o-VhZ" id="2dd-3R-4ne"/>
                         <outlet property="tableView" destination="lbT-ki-ASt" id="dn0-5B-oro"/>
                     </connections>
                 </viewController>
@@ -331,7 +342,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7vr-Wj-2Dj"/>
+        <segue reference="3jC-rl-Um8"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
